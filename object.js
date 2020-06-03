@@ -15,4 +15,4 @@ const DkInfo ={
 }
 
 console.log(DkInfo.name);
-console.log(DkInfo.age)
+console.log(DkInfo.age);
