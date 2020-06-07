@@ -17,7 +17,7 @@ console.log(name);
 
 
 const name ="dkkim";
-console.log(name); 
+console.log(name);
 
 //두가지 경우 모두 에러 출력
 
