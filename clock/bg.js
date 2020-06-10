@@ -2,7 +2,7 @@ const body = document.querySelector("body");
 
 function paintImage(imgNumber){
     const image = new Image();
-    img.src =
+    img.src = /
     body.appendChild(image);
 }
 
