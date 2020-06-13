@@ -1,19 +1,17 @@
 const body = document.querySelector("body");
 
+const IMG_NUMBER = 3;
+
 function paintImage(imgNumber){
     const image = new Image();
-    img.src = /
-    body.appendChild(image);
-}
-
-function genRandom (){
-    const number = Math.floor(Math.random()* 3);
-    return number;
+    image.src =`images/$(imgNumber + 1 ).jpg`;
+    
 
 }
 
-function init () {
-    const randomNumber = genRandom();
+function init(){
+    const randomNumber = 
+    paintImage(randomNumber);
 }
 
 init();
