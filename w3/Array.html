@@ -13,12 +13,16 @@
     <p>배열에 포함된 내용입니다 </p>
     <p id="arr"></p>
     <p id ="forEachTest"></p>
+    <p id = "ArrayFrom">  
     <script>
         var arr = ["a", "b", "c", "d", "e"];
         document.getElementById("arr").innerHTML = arr;
 
         var fruits = ["apple", "orange","cherry"];
         fruits.forEach(forEachTest);
+        
+        var myArr= Array.from("ABCDEFG");
+        document.getElementById("ArrayFrom").innerHTML = myArr;
 
         function forEachTest(item , index) {
             document.getElementById("forEachTest").innerHTML += index + " : " + item + "<br>";
