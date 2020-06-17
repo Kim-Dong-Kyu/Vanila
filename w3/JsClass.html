@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>javascript class</h2>
+    <p id="class_demo"></p>
+
+    <script>
+        class Car {
+            constructor(brand) {
+                this.carname = brand;
+            }
+        }
+        mycar = new Car("Ford");
+        document.getElementById("class_demo").innerHTML = mycar.carname;
+    </script>
+</body>
+
+</html>
