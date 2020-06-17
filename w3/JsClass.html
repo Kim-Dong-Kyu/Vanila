@@ -10,15 +10,34 @@
 <body>
     <h2>javascript class</h2>
     <p id="class_demo"></p>
-
+    <p id = "Audi"></p>
     <script>
         class Car {
             constructor(brand) {
                 this.carname = brand;
             }
+            present() {
+                return "I wish a " + this.carname;
+            }
+        }
+
+        class Model extends Car {
+            constructor(brand, mod) {
+                super(brand);
+                this.model = mod;
+            }
+            show() {
+                return this.present() + " it is a" + this.model;
+            }
         }
         mycar = new Car("Ford");
         document.getElementById("class_demo").innerHTML = mycar.carname;
+        
+        mycar2 = new Model("Audi", "i8");
+        document.getElementById("Audi").innerHTML = mycar2.show();
+
+
+
     </script>
 </body>
 
