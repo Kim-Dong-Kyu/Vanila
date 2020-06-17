@@ -9,7 +9,7 @@
 
 <body>
   <h2>Boolean Test</h2>
-  <butotn onclick="myFunction()"> 실행 </butotn>
+  <button onclick="myFunction()"> 실행 </button>
   <button onclick="addString()">Try it</button>
   <p id="BoolDemo"></p>
   <p id="concat"></p>
@@ -17,15 +17,11 @@
     function myFunction() {
       document.getElementById("BoolDemo").innerHTML = Boolean(10 > 9);
     }
-
     function addString() {
       var hege = ["Cecilie", "Lone"];
       var stale = ["Emil", "Tobias", "Linus"];
       var children = hege.concat(stale);
-      document.getElementById("demo").innerHTML = children;
-    }
-
-
+      document.getElementById("concat").innerHTML = children;
     }
   </script>
 </body>
