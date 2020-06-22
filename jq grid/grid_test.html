@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/ui.jqgrid.css">
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.jqGrid.min.js"></script>
+
+    <!-- Jquery-ui CSS & SCRIPT -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.js">
+
+    <script type="text/javascript">
+        jQuery().ready(function () {
+            jQuery("#Grid").jqGrid({
+                datatype: "json",
+                height: 300,
+                colNames: ['번호', '제목', '등록자', '등록일시'],
+                colModel: [
+                    { name: 'NO', index: 'NO', width: 40, align: 'center', },
+                    { name: 'board_subject', index: 'board_subject', width: 300, align: 'left' },
+                    { name: 'write', index: 'write', width: 70, align: 'center' },
+                    { name: 'update_date', index: 'update_date', width: 100, align: 'center' }
+                ],
+                mtype: "POST"
+            });
+        });
+        jQuery().ready()
+    </script>
+  
+</head>
+<body>
+    <h2 style="text-align: center;">JQgridTest</h2>
+    <div class ="Grid1"> 
+    <table id="Grid"></table>
+    </div>
+     <script>
+        $(".Grid1").css("margin-left", "auto");
+        $(".Grid1").css("margin-right", "auto");
+        $(".Grid1").css("width", "580px");
+    </script>     
+
+</body>
+</html
