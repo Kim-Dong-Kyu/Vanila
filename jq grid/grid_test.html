@@ -12,16 +12,65 @@
     <!-- Jquery-ui CSS & SCRIPT -->
     <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.js">
-
     <script type="text/javascript">
         jQuery().ready(function () {
             jQuery("#Grid").jqGrid({
-                datatype: "json",
+                data: [
+                    {
+                        "NO": 1,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 2,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 3,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 4,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 5,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 6,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 7,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 8,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    }
+                ],
+                datatype: "local",
                 height: 300,
-                pager : "#pager",
+                pager: "#pager",
                 colNames: ['번호', '제목', '등록자', '등록일시'],
                 /*mapping 될 변수이름 지정*/
-                colModel: [  
+                colModel: [
                     { name: 'NO', index: 'NO', width: 40, align: 'center', },
                     { name: 'board_subject', index: 'board_subject', width: 300, align: 'left' },
                     { name: 'write', index: 'write', width: 70, align: 'center' },
@@ -32,19 +81,21 @@
         });
         jQuery().ready()
     </script>
-  
+
 </head>
+
 <body>
     <h2 style="text-align: center;">JQgridTest</h2>
-    <div class ="Grid1"> 
-    <table id="Grid"></table>
-    <div id ="pager"></div>
+    <div class="Grid1">
+        <table id="Grid"></table>
+        <div id="pager"></div>
     </div>
-     <script>
+    <script>
         $(".Grid1").css("margin-left", "auto");
         $(".Grid1").css("margin-right", "auto");
-        $(".Grid1").css("width", "580px");
-    </script>     
+        $(".Grid1").css("width","575px");
+    </script>
 
 </body>
+
 </html
