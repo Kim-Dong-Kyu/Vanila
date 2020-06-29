@@ -18,6 +18,7 @@
             jQuery("#Grid").jqGrid({
                 datatype: "json",
                 height: 300,
+                pager : "#pager",
                 colNames: ['번호', '제목', '등록자', '등록일시'],
                 /*mapping 될 변수이름 지정*/
                 colModel: [  
@@ -37,6 +38,7 @@
     <h2 style="text-align: center;">JQgridTest</h2>
     <div class ="Grid1"> 
     <table id="Grid"></table>
+    <div id ="pager"></div>
     </div>
      <script>
         $(".Grid1").css("margin-left", "auto");
