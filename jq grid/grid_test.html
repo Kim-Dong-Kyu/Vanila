@@ -84,9 +84,17 @@
                     }
                 ],
                 datatype: "local",
+                jsonReader : {
+                    root : "rows",
+                    page : "page",
+                    records : "records",
+                    total : "total"
+                },
                 height: 300,
-                rowNum : 10,
+                rowNum: 10,                
                 pager: "#pager",
+                pginput : true,
+                pgbuttons : true,
                 colNames: ['번호', '제목', '등록자', '등록일시'],
                 /*mapping 될 변수이름 지정*/
                 colModel: [
@@ -95,7 +103,45 @@
                     { name: 'write', index: 'write', width: 70, align: 'center' },
                     { name: 'update_date', index: 'update_date', width: 100, align: 'center' }
                 ],
-                mtype: "POST"
+                mtype: "POST",
+                onPaging: function (pgButton) {
+                    var gridPage = $("#Grid").getGridParam("page");
+                    var totalPage = $("#Grid").getGridParam("total");
+
+                    if (pgButton == "next") {
+                        if (gridPage < totalPage) {
+                            gridPage += 1;
+                        } else {
+                            gridPage = page;
+                        }
+                    } else if (pgButton == "prev") {
+                        if (gridPage > 1) {
+                            gridPage -= 1;
+                        } else {
+                            gridPage = page;
+                        }
+                    } else if (pgButton == "first") {
+                        gridPage = 1;
+                    } else if (pgButton == "last") {
+                        gridPage = totalPage;
+                    } else if (pgButton == "user") {
+                        var nowPage = Number($("#pager .ui-pg-inpujt").val());
+                        if (totalPage >= nowPage && nowPage > 0) {
+                            gridPage = nowPage;
+                        } else {
+                            $("#pager .ui-pg-input").val(page);
+                            gridPage = page;
+                        }
+                    }else if(pgbutton =="records"){
+                        gridPage = 1;
+                    }
+
+                    $("#Grid").setGridParam("page",gridPage);
+                    
+                    $("#Grid").setGridParam({
+                        postData  : jqGridForm.setParam()
+                    });
+                }
             });
         });
         jQuery().ready()
@@ -112,7 +158,7 @@
     <script>
         $(".Grid1").css("margin-left", "auto");
         $(".Grid1").css("margin-right", "auto");
-        $(".Grid1").css("width","575px");
+        $(".Grid1").css("width", "575px");
     </script>
 
 </body>
