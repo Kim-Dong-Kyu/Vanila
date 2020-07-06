@@ -12082,7 +12082,7 @@ $.jgrid.extend({
 			$("tr.jqgrow:not(.ui-draggable)",$t).draggable($.isFunction(datadnd.drag) ? datadnd.drag.call($($t),datadnd) : datadnd.drag);
 		}
 		var appender = "<table id='jqgrid_dnd' class='ui-jqgrid-dnd'></table>";
-		if($("#jqgrid_dnd")[0] === undefined) {
+		if($("'#'+gridId_dnd")[0] === undefined) {
 			$('body').append(appender);
 		}
 
@@ -12199,7 +12199,7 @@ $.jgrid.extend({
 				"revert": "invalid",
 				"helper": "clone",
 				"cursor": "move",
-				"appendTo" : "#jqgrid_dnd",
+				"appendTo" : "'#'+gridId_dnd",
 				"zIndex": 5000
 			},
 			"dragcopy": false,

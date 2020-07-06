@@ -99,11 +99,13 @@
                 /*mapping 될 변수이름 지정*/
                 colModel: [
                     { name: 'NO', index: 'NO', width: 40, align: 'center', },
-                    { name: 'board_subject', index: 'board_subject', width: 300, align: 'left' },
+                    { name: 'board_subject', index: 'board_subject', width: 300, align: 'center' },
                     { name: 'write', index: 'write', width: 70, align: 'center' },
                     { name: 'update_date', index: 'update_date', width: 100, align: 'center' }
                 ],
                 mtype: "POST",
+                localComplete  : function (data){ 
+                },
                 onPaging: function (pgButton) {
                     var gridPage = $("#Grid").getGridParam("page");
                     var totalPage = $("#Grid").getGridParam("total");
