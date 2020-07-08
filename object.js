@@ -9,7 +9,7 @@ const DkInfo ={
    favFood : [
        {
            namem: "chicken ",
-           fatty : true+
+           fatty : true,
        }
    ]
 }
