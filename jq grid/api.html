@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/ui.jqgrid.css">
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.jqGrid.min.js"></script>
+
+    <!-- Jquery-ui CSS & SCRIPT -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.js">
+    <script type="text/javascript">  
+        $("#list").jqGrid({
+            datatype: 'local',
+            styleUI: 'Foundation',
+            data: [
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" },
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" },
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" },
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" },
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" },
+            { "name": "Lorene Battle", "phone": "(936) 574-3976" },
+            { "name": "Wendi Downs", "phone": "(815) 510-3017" }
+
+            ],
+            colModel: [
+                { name: 'name', label: 'Name' },
+                { name: 'phone', label: 'Phone Number' }
+            ],
+            caption: 'Users Grid',
+            height: 'auto',
+            autowidth: true,
+            rowNum: 3,
+            rowList: [3, 4, 5],
+            pager: '#pager',
+            onPaging: function (pgButton) {
+                $('#eventLog').append(pgButton + '<br/>')
+            }
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div style="height:400px">
+        <table id="list">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <div id="pager"></div>
+        <h4>onPaging Event Log (페이지 이동을 해보세요.)</h4>
+        <span id="eventLog"></span>
+    </div>
+</body>
+
+</html>

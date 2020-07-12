@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Boolean Test</h2>
+  <button onclick="myFunction()"> 실행 </button>
+  <button onclick="addString()">Try it</button>
+  <p id="BoolDemo"></p>
+  <p id="concat"></p>
+  <script>
+    function myFunction() {
+      document.getElementById("BoolDemo").innerHTML = Boolean(10 > 9);
+    }
+    function addString() {
+      var hege = ["Cecilie", "Lone"];
+      var stale = ["Emil", "Tobias", "Linus"];
+      var children = hege.concat(stale);
+      document.getElementById("concat").innerHTML = children;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/ui.jqgrid.css">
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.jqGrid.min.js"></script>
+
+    <!-- Jquery-ui CSS & SCRIPT -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./jquery-ui-1.12.1/jquery-ui.js">
+    <script type="text/javascript">
+        jQuery().ready(function () {
+            jQuery("#Grid").jqGrid({
+                data: [
+                    {
+                        "NO": 1,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 2,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 3,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 4,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 5,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 6,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 7,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 8,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 9,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 10,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    },
+                    {
+                        "NO": 11,
+                        "board_subject": "제목입니다",
+                        "write": "test1",
+                        "update_date": "2020-06-29"
+                    }
+                ],
+                datatype: "local",
+                jsonReader : {
+                    root : "rows",
+                    page : "page",
+                    records : "records",
+                    total : "total"
+                },
+                height: 300,
+                rowNum: 10,                
+                pager: "#pager",
+                pginput : true,
+                pgbuttons : true,
+                colNames: ['번호', '제목', '등록자', '등록일시'],
+                /*mapping 될 변수이름 지정*/
+                colModel: [
+                    { name: 'NO', index: 'NO', width: 40, align: 'center', },
+                    { name: 'board_subject', index: 'board_subject', width: 300, align: 'center' },
+                    { name: 'write', index: 'write', width: 70, align: 'center' },
+                    { name: 'update_date', index: 'update_date', width: 100, align: 'center' }
+                ],
+                mtype: "POST",
+                localComplete  : function (data){ 
+                },
+                onPaging: function (pgButton) {
+                    var gridPage = $("#Grid").getGridParam("page");
+                    var totalPage = $("#Grid").getGridParam("total");
+
+                    if (pgButton == "next") {
+                        if (gridPage < totalPage) {
+                            gridPage += 1;
+                        } else {
+                            gridPage = page;
+                        }
+                    } else if (pgButton == "prev") {
+                        if (gridPage > 1) {
+                            gridPage -= 1;
+                        } else {
+                            gridPage = page;
+                        }
+                    } else if (pgButton == "first") {
+                        gridPage = 1;
+                    } else if (pgButton == "last") {
+                        gridPage = totalPage;
+                    } else if (pgButton == "user") {
+                        var nowPage = Number($("#pager .ui-pg-inpujt").val());
+                        if (totalPage >= nowPage && nowPage > 0) {
+                            gridPage = nowPage;
+                        } else {
+                            $("#pager .ui-pg-input").val(page);
+                            gridPage = page;
+                        }
+                    }else if(pgbutton =="records"){
+                        gridPage = 1;
+                    }
+
+                    $("#Grid").setGridParam("page",gridPage);
+                    
+                    $("#Grid").setGridParam({
+                        postData  : jqGridForm.setParam()
+                    });
+                }
+            });
+        });
+        jQuery().ready()
+    </script>
+
+</head>
+
+<body>
+    <h2 style="text-align: center;">JQgridTest</h2>
+    <div class="Grid1">
+        <table id="Grid"></table>
+        <div id="pager"></div>
+    </div>
+    <script>
+        $(".Grid1").css("margin-left", "auto");
+        $(".Grid1").css("margin-right", "auto");
+        $(".Grid1").css("width", "575px");
+    </script>
+
+</body>
+
+</html

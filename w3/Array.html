@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>자바스크립트 배열</h2>
+
+    <p>배열에 포함된 내용입니다 </p>
+    <p id="arr"></p>
+    <p id ="forEachTest"></p>
+    <p id = "ArrayFrom">  
+    <script>
+        var arr = ["a", "b", "c", "d", "e"];
+        document.getElementById("arr").innerHTML = arr;
+
+        var fruits = ["apple", "orange","cherry"];
+        fruits.forEach(forEachTest);
+        
+        var myArr= Array.from("ABCDEFG");
+        document.getElementById("ArrayFrom").innerHTML = myArr;
+
+        function forEachTest(item , index) {
+            document.getElementById("forEachTest").innerHTML += index + " : " + item + "<br>";
+        }
+    </script>
+
+</body>
+
+</html>
