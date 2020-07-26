@@ -38,4 +38,4 @@ function scopeExam2(){
 scopeExam();  
 scopeExam2(); 
 
-// 변수 키워드 생략 예제ㄴ
+// 변수 키워드 생략 예제 
