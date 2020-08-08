@@ -25,5 +25,6 @@ console.log(name);
 const name="dk";
 console.log(name);
 
+
 //두가지 경우 모두 에러 출력
 

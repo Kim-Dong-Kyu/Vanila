@@ -1,4 +1,4 @@
-function scopeExam() {  
+function scopeExam() {   
     var a = 0;
     if (true) {
         var b = 0;
@@ -10,6 +10,18 @@ function scopeExam() {
     console.log("b=" + b);
 }
 scopeExam();
+
+
+function scopeExam(){
+    var a =0;
+    if(true){
+        var b=0;
+        
+
+    }
+
+
+}
 
 /* 함수 단위 스코프  확인 예제*/
 
@@ -39,3 +51,5 @@ scopeExam();
 scopeExam2(); 
 
 // 변수 키워드 생략 예제 
+
+
