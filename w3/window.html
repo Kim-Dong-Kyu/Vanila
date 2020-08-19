@@ -12,6 +12,8 @@
         function closeWindow() {
             if (mywindow) {
                 mywindow.close();
+                opener.parent.location.reload();
+                window.close(); // 부모창 새로고침 및 현재창 닫기 
             }
         }
     </script>
