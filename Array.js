@@ -11,4 +11,4 @@ console.log(mon, tue, wed, thu, fri, sat, sun)
 const daysOfWeek = ["monday", "tuesday", "wednesday", "thursday", "friday",
     "saturday", "sunday"];
 
-console.log(daysOfWeek); 
+console.log(daysOfWeek);
