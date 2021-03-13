@@ -18,5 +18,5 @@ console.log(result);
 var noParam = () => 3+4;
 var result = noParam();
 console.log(result);
--
+
 
