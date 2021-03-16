@@ -20,3 +20,4 @@ var result = noParam();
 console.log(result);
 
 
+
