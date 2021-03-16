@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body> 
+  <button id="increase">+</button>
+  <p id="count">0</p>
+  <script>
+    var IBtn = document.getElementById("increase"); 
+    var count  = document.getElementById("count");
+    var increase = function(){
+      var count = 0; // 카운트 변수
+      /*클로저를 반환*/
+      return function(){
+        return count++;
+      }
+    }();
+    IBtn.onclick = function () { //클로저가 현재 상태를 기억하는지 확인
+      count.innerHTML = increase();
+    };
+  </script>
+</body>
+</html>
