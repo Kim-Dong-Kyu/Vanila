@@ -9,7 +9,7 @@ console.log(sum);
 
 /* Es6 추가된 arrow function */
 var es6 = (a,b) /*파라미터*/ => {
-    return one + two;  /*함수 내용*/ 
+    return a + b;  /*함수 내용*/ 
 }
 var result = es6(1,2);
 console.log(result);
