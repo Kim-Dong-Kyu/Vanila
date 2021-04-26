@@ -1,5 +1,5 @@
 /* yield 와 next 사용 기본 예제 */ 
-let getAmount = function*(qty, price){
+let getAmount = function * (qty, price){
     let amount = Math.floor(qty * price);
     let discount  = yield amount;
     return amount - discount;
