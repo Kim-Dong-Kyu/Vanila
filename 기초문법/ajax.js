@@ -1,10 +1,18 @@
+
+var paramArray = new Array();
+paramArray.push("a");
+paramArray.push("b");
+paramArray.push("c");
+
 $.ajax({
-    url:"/score/ajax/research",
-    type:"POST",
+    :"/score/ajax/research",
+    type : "POST",
+    data : {"paramArray" :paramArray}
+    dataType : "json"
     success: function(result) {
-        if (result) {
-        } else {
-            alert("불러오기 실패");
-        }
+       /*성공 로직*/ 
+    }, 
+    error : function(error){
+        /*error 로직*/ 
     }
 });
