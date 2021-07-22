@@ -8,8 +8,10 @@ $.ajax({
     :"/score/ajax/research",
     type : "POST",
     data : {"paramArray" :paramArray}
-    dataType : "json"
+    dataType : "json", 
+    tranditional : true, //자바로 배열보낼 때 활용
     success: function(result) {
+
        /*성공 로직*/ 
     }, 
     error : function(error){
