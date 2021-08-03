@@ -1,6 +1,6 @@
 
 /*find 안 콜백함수에서 true 를 반환하면 엘리먼트 값을 반환한다*/ 
-let result = [1,2,3].find((value, index, allDate) => value === 2 || value ===1);
+var result = [1,2,3].find((value, index, allDate) => value === 2 );
 console.log(result);
 
 result = [1,2,1].find(function(value, index, allDate){
