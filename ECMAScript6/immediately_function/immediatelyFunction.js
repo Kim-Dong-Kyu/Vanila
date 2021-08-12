@@ -8,3 +8,7 @@ app();
 (function(){
     console.log("즉시 실행 함수 호출");
 }());
+
+ ()=>{
+    console.log("ES6 즉시실행 함수 호출")
+}();
